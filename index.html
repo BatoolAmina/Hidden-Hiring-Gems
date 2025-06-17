@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Hiring Gems 💎</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f0f1a;
+      --primary: #7ef9ff;
+      --accent: #ffd86f;
+      --card-bg: #1f2235;
+      --text-light: #ccc;
+      --text-dark: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-light);
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 0.5rem;
+    }
+
+    .controls {
+      max-width: 400px;
+      margin: 0 auto 2rem;
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    .controls input {
+      flex: 1;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #2c2e45;
+      color: white;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: scaleIn 0.5s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(255, 216, 111, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #ddd;
+    }
+
+    .pros-cons strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--accent);
+    }
+
+    .pros-cons ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .pros-cons li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .pros-cons i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+    }
+
+    .visit-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--primary);
+      color: var(--text-dark);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .visit-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💻 Hidden Hiring Gems 💎</h1>
+    <p>Discover underrated platforms to boost your tech career 🚀</p>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search platforms..." />
+  </div>
+
+  <section class="platforms" id="platform-container">
+    <!-- Cards will be dynamically injected -->
+  </section>
+
+  <footer>
+    <p>Created by Batool for CollegeTips.in • Explore. Apply. Shine. ✨</p>
+  </footer>
+
+  <script>
+    const platforms = [...[
+      { name: "BairesDev", desc: "Latin America-based tech outsourcing firm hiring remote devs.", pros: ["Remote USD jobs", "Long-term projects"], cons: ["Competitive entry", "May require relocation"], link: "https://www.bairesdev.com" },
+      { name: "CloudDevs", desc: "Remote hiring for vetted devs in LATAM & Asia.", pros: ["Fast hiring cycle", "Great clients from US/Europe"], cons: ["Only senior devs", "Limited part-time roles"], link: "https://clouddevs.com" },
+      { name: "Contra", desc: "Commission-free freelance platform for developers and creators.", pros: ["100% earnings – no commission", "Client collaboration tools", "Polished, portfolio-style profiles"], cons: ["Fewer gigs compared to big players", "US-centric client base", "Requires solid self-promotion"], link: "https://contra.com" },
+      { name: "Flexiple", desc: "Indian version of Toptal for high-quality freelance dev gigs.", pros: ["Great INR/USD pay", "Personalized support", "Quality clients"], cons: ["Selective entry", "Needs strong portfolio"], link: "https://flexiple.com" },
+      { name: "Gaper.io", desc: "Helps remote engineers connect with startups.", pros: ["Daily job opportunities", "Skill-focused matchmaking"], cons: ["Interview-heavy", "Only full-time roles mostly"], link: "https://gaper.io" },
+      { name: "GeeksPerHour", desc: "Indian platform for tech freelancers. Fast gigs.", pros: ["Low entry barrier", "Razorpay/UPI payments", "Good for students"], cons: ["Low-paying gigs", "Old site design"], link: "https://www.geeksperhour.com" },
+      { name: "Hubstaff Talent", desc: "Free platform for remote gigs and contracts.", pros: ["Free forever", "Zero commission", "Project-based gigs"], cons: ["Basic UI", "Less active in India"], link: "https://talent.hubstaff.com" },
+      { name: "Lemon.io", desc: "Vetted freelancers matched to startup clients.", pros: ["USD gigs", "Weekly payouts", "Easy once onboarded"], cons: ["High rejection rate", "No part-time work"], link: "https://lemon.io" },
+      { name: "Remotive", desc: "Curated job board for remote tech jobs globally.", pros: ["Verified job listings", "Regular updates", "Freelance and full-time"], cons: ["Some listings expired", "Pricing for featured jobs"], link: "https://remotive.io" },
+      { name: "Topcoder", desc: "Gig and competition-based dev work for global tech talent.", pros: ["Code competitions", "Great for portfolio building"], cons: ["Unstable income", "One-off projects"], link: "https://www.topcoder.com" },
+      { name: "Turing", desc: "AI-powered hiring platform for top remote dev jobs.", pros: ["Great pay 💰", "Remote-first mindset 🌐", "Skill-based hiring"], cons: ["Tough screening process", "Best for experienced devs"], link: "https://www.turing.com" },
+      { name: "We Work Remotely", desc: "Well-vetted remote dev listings from global startups.", pros: ["Remote, freelance & full-time", "Developer-heavy focus"], cons: ["High competition", "Less India-specific"], link: "https://weworkremotely.com" }
+    ].sort((a, b) => a.name.localeCompare(b.name))];
+
+    const container = document.getElementById("platform-container");
+    const searchInput = document.getElementById("search");
+
+    function renderCards(filter = "") {
+      container.innerHTML = "";
+      const filtered = platforms.filter(p => p.name.toLowerCase().includes(filter.toLowerCase()));
+      filtered.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h2>${p.name}</h2>
+          <p>${p.desc}</p>
+          <div class="pros-cons">
+            <strong>✅ Pros:</strong>
+            <ul>${p.pros.map(pro => `<li><i class='fas fa-check-circle'></i>${pro}</li>`).join('')}</ul>
+            <strong>❌ Cons:</strong>
+            <ul>${p.cons.map(con => `<li><i class='fas fa-times-circle'></i>${con}</li>`).join('')}</ul>
+          </div>
+          <a class="visit-btn" href="${p.link}" target="_blank">Visit Site</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    renderCards();
+
+    searchInput.addEventListener("input", (e) => {
+      renderCards(e.target.value);
+    });
+  </script>
+</body>
+</html>
